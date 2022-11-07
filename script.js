@@ -6,12 +6,6 @@ var btn12 = document.getElementById("btn12");
 
 setInterval(newDateWrite, 1000);
 
-function formatChange(chour){
-    if(chour > 12)
-        chour -= 12;
-    return chour; 
-}
-
 function newDateWrite(){
 
 var DATE = new Date();
@@ -57,9 +51,6 @@ else if(today == 6)
     var saturday = document.getElementById("saturday");
     saturday.classList.add("today");
 }
-
-btn12.addEventListener("click", function(){return formatChange(cHour)});
-console.log(cHour);
 
 if(cHour < 10){
     cHour = "0" + cHour;
