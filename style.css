@@ -8,6 +8,7 @@ body {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 300;
     font-size: 20px;
+    overflow-x: hidden;
 }
 
 * {
@@ -23,6 +24,7 @@ body {
 .days ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .days ul li {
@@ -72,4 +74,33 @@ body {
 .buttons input:hover {
     border: 3px solid whitesmoke;
     
+}
+
+/* Media Queries */
+@media screen and (max-width: 990px) {
+    body {
+        height: 70vh;
+        display: flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .days li{
+        font-size: 24px;
+        display: none;
+    }
+    .days ul {
+        margin:0;
+        padding: 0;
+    }
+    .days .today {
+        display: block;
+    }
+    .clock ul li{
+        font-size: 48px;
+    }
+    .clock ul {
+        margin: 0;
+        padding: 0;
+    }
 }
