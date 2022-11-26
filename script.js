@@ -1,55 +1,57 @@
-var newHour = document.getElementById("chour");
-var newMinute = document.getElementById("cminute");
-var newSecond = document.getElementById("csecond");
-var btn24 = document.getElementById("btn24");
-var btn12 = document.getElementById("btn12");
+const newHour = document.getElementById("chour");
+const newMinute = document.getElementById("cminute");
+const newSecond = document.getElementById("csecond");
+const btn24 = document.getElementById("btn24");
+const btn12 = document.getElementById("btn12");
 
 setInterval(newDateWrite, 1000);
 
 function newDateWrite(){
 
-var DATE = new Date();
+const DATE = new Date();
 
-var cHour = DATE.getHours();
-var cMinutes = DATE.getMinutes();
-var cSeconds = DATE.getSeconds();
+let cHour = DATE.getHours();
+let cMinutes = DATE.getMinutes();
+let cSeconds = DATE.getSeconds();
 
-var today = DATE.getDay();
+let today = DATE.getDay();
 
-if(today == 0)
+switch(today)
 {
-  var sunday = document.getElementById("sunday");
-  sunday.classList.add("today");
-}
-else if(today == 1)
-{
-    var monday = document.getElementById("monday");
-    monday.classList.add("today");
-}
-else if(today == 2)
-{
-    var tuesday = document.getElementById("tuesday");
-    tuesday.classList.add("today");
-}
-else if(today == 3)
-{
-    var wednesday = document.getElementById("wednesday");
-    wednesday.classList.add("today");
-}
-else if(today == 4)
-{
-    var thursday = document.getElementById("thursday");
-    thursday.classList.add("today");
-}
-else if(today == 5)
-{
-    var friday = document.getElementById("friday");
-    friday.classList.add("today");
-}
-else if(today == 6)
-{
-    var saturday = document.getElementById("saturday");
-    saturday.classList.add("today");
+    case 0:
+        let sunday = document.getElementById("sunday");
+        sunday.classList.add("today");
+        break;
+    
+    case 1:
+        let monday = document.getElementById("monday");
+        monday.classList.add("today");
+        break;
+    
+    case 2:
+        let tuesday = document.getElementById("tuesday");
+        tuesday.classList.add("today");
+        break;
+    
+    case 3:
+        let wednesday = document.getElementById("wednesday");
+        wednesday.classList.add("today");
+        break;
+
+    case 4:
+        let thursday = document.getElementById("thursday");
+        thursday.classList.add("today");
+        break;
+
+    case 5:
+        let friday = document.getElementById("friday");
+        friday.classList.add("today");
+        break;
+
+    case 6:
+        let saturday = document.getElementById("saturday");
+        saturday.classList.add("today");
+        break;
 }
 
 if(cHour < 10){
@@ -65,5 +67,4 @@ if(cSeconds < 10){
 newHour.innerHTML = cHour;
 newMinute.innerHTML = cMinutes;
 newSecond.innerHTML = cSeconds;
-
 }
